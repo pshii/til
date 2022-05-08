@@ -1,0 +1,12 @@
+issue - 
+해야할 기능들의 담당자를 정한다.
+앞으로 해야할 기능들을 정하는 등 다른 의미도 있다.
+branch -
+각자의 branch에서 작업을 한다.
+merge - 
+각자 작업한 것들을 main branch에 병합한다.
+merge confilct - 
+다른 branch에서 동일한 파일의 내용을 수정하면 충돌 발생.
+최종 수정 후 commit.
+tracking -
+로컬repo와 원격repo의 특정 branch를 연결하는 것
