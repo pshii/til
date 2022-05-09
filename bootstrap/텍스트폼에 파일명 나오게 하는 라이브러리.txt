@@ -1,0 +1,7 @@
+---------부트스트랩 텍스트폼과 같이 사용----------
+<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+
+
+$(document).ready(function () {
+            bsCustomFileInput.init() 

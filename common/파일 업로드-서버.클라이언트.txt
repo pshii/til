@@ -1,0 +1,40 @@
+------------------------------서버------------------------------------
+    file = request.files["file_give"]
+
+    extension = file.filename.split('.')[-1]     // 확장자 자르기
+
+    today = datetime.now()                       // 현재 시간 가져오기 
+    mytime = today.strftime('%Y-%m-%d-%H-%M-%S') // 형식에 맞게 변환
+
+    filename = f'file-{mytime}'                  // file과 mytime 붙이기
+    save_to = f'static/{filename}.{extension}'   // static 폴더에 저장 
+    file.save(save_to)                           // static 폴더에 저장
+
+------------------------------클라이언트--------------------------------
+    let title = $('#title').val()
+    let content = $("#content").val()
+
+    let file = $('#file')[0].files[0]
+    let form_data = new FormData()
+
+    form_data.append("file_give", file)
+    form_data.append("title_give", title)
+    form_data.append("content_give", content)
+
+            $.ajax({
+                type: "POST",
+                url: "/diary",
+                data: form_data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    alert(response["msg"])
+                    window.location.reload()
+                }
+            });
+        }
+
+
+
+
